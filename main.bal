@@ -10,11 +10,11 @@ public function main() {
 // configurable int port = ?;
 // configurable int envVarPort = ?;
 
-configurable string port = "0";
-configurable string envVarPort = "0";
+configurable int port = ?;
+configurable int envVarPort = ?;
 
-int|error intPort = langint:fromString(port);
-int|error intEnvVarPort = langint:fromString(envVarPort);
+//int|error intPort = langint:fromString(port);
+//int|error intEnvVarPort = langint:fromString(envVarPort);
 
 int pseudoPort = 9099;
 
