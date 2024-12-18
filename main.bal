@@ -1,7 +1,7 @@
 import ballerina/io;
 import  ballerina/http;
 import ballerina/os;
-import ballerina/lang.'int as langint;
+import ballerina/lang.'int;
 
 public function main() {
     io:println("Hello, World!");
@@ -15,8 +15,11 @@ int pseudoPort = 9099;
 string varPort = os:getEnv("port");
 string var_envVarPort = os:getEnv("envVarPort");
 
-int|error intPort = langint:fromString(varPort);
-int|error intEnvVarPort = langint:fromString(var_envVarPort);
+// int|error intPort = langint:fromString(varPort);
+// int|error intEnvVarPort = langint:fromString(var_envVarPort);
+
+int intPort = check int:fromString(varPort);
+int intEnvVarPort = check int:fromString(var_envVarPort);
 
 service /base on new http:Listener(pseudoPort){
     resource function get welcome() returns string{
