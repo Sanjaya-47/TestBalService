@@ -15,7 +15,7 @@ int pseudoPort = 9099;
 string varPort = os:getEnv("port");
 string var_envVarPort = os:getEnv("envVarPort");
 
-int|error intPort = langint:fromString(Varport);
+int|error intPort = langint:fromString(varPort);
 int|error intEnvVarPort = langint:fromString(var_envVarPort);
 
 service /base on new http:Listener(pseudoPort){
