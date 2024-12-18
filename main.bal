@@ -20,7 +20,7 @@ int|error intEnvVarPort = langint:fromString(var_envVarPort);
 
 service /base on new http:Listener(pseudoPort){
     resource function get welcome() returns string{
-        return string `pseudoPort ${pseudoPort} varPort ${varPort} var_envVarPort ${var_envVarPort} barePort ${port} bareEnvVarPort ${envVarPort}`;
+        return string `pseudoPort ${pseudoPort} varPort ${varPort} var_envVarPort ${var_envVarPort} intPort ${intPort} intEnvVarPort ${intEnvVarPort}`;
     }
     }
 
